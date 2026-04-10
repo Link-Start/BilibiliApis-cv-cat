@@ -1,58 +1,86 @@
-# Bilibili Platform API
+<div align="center">
+    <a href="https://www.python.org/">
+        <img src="https://img.shields.io/badge/python-3.12%2B-blue" alt="Python 3.12+">
+    </a>
+    <a href="https://nodejs.org/zh-cn/">
+        <img src="https://img.shields.io/badge/nodejs-20%2B-green" alt="NodeJS 20+">
+    </a>
+    <a href="https://fastapi.tiangolo.com/">
+        <img src="https://img.shields.io/badge/FastAPI-0.115%2B-009688" alt="FastAPI">
+    </a>
+</div>
 
-基于 FastAPI 封装的 Bilibili 搜索接口服务，支持按关键词、排序方式批量获取视频信息。
+# 🎬 Bilibili Platform
 
-## 技术栈
+**✨ 专业的 B站 视频数据采集解决方案，支持按关键词批量搜索视频信息**
 
-- **Python 3.12** + **FastAPI** + **Uvicorn**
-- **PyExecJS** + **Node.js** — 在 Python 中执行 JS 代码，用于生成 Bilibili WBI 签名参数
+当你需要让 AI Agent 感知 B站内容生态——自动采集视频热度、分析弹幕趋势、驱动内容运营策略——第一道墙往往不是模型能力，而是**平台数据获取能力的缺失**。
 
-## 快速开始
+本项目做的事很简单：把这道墙拆掉。
 
-### Docker 运行（推荐）
+**⚠️ 严禁用于爬取用户隐私、违规商业用途！本项目仅供学习与技术研究使用，后果自负。**
+
+## 🌟 功能特性
+
+- ✅ **视频搜索采集**
+  - 按关键词批量搜索视频
+  - 支持按播放量 / 弹幕数排序
+  - 自动翻页，按需获取指定数量结果
+- 🔐 **WBI 签名自动计算**
+  - 内嵌 JS 运行时，自动生成 `w_rid` 签名参数
+  - 适配 B站最新 WBI 鉴权接口
+- 🚀 **高性能服务**
+  - 基于 FastAPI + Uvicorn 异步服务
+  - 支持 Docker 一键部署
+
+## 🛠️ 快速开始
+
+### ⛳ 运行环境
+
+- Python 3.12+
+- Node.js 20+
+
+
+### 🎯 本地安装
 
 ```bash
-# 构建镜像
-docker build -t bilibili-platform .
-
-# 启动容器
-docker run -d -p 5008:5008 --name bilibili-platform bilibili-platform
+pip install -r requirements.txt
 ```
 
-### 本地运行
+### 🚀 运行项目
 
 ```bash
-# 安装依赖（需要 Python 3.12+ 和 Node.js 20+）
-pip install -r requirements.txt
-
-# 启动服务
 python App.py
 ```
 
 服务启动后访问 http://localhost:5008/docs 查看交互式 API 文档。
 
-## API 说明
+### 🎨 Cookie 配置
 
-### POST `/search_some_by_num`
+在浏览器中打开 [www.bilibili.com](https://www.bilibili.com)，**登录账号**后按 `F12` 打开开发者工具，点击「网络」→ 找任意一个接口请求 → 复制请求头中的 `Cookie` 字段值。
 
-按数量批量搜索 Bilibili 视频。
+> ⚠️ 注意：必须登录后获取的 Cookie 才有效，未登录的 Cookie 无法正常请求搜索接口。
 
-**请求体**
-
-| 字段         | 类型   | 必填 | 说明                                      |
-|------------|------|----|-----------------------------------------|
-| keyword    | str  | 是  | 搜索关键词                                   |
-| num        | int  | 是  | 期望返回的视频数量                               |
-| order      | str  | 是  | 排序方式：`dm`（弹幕数）/ `click`（播放量）           |
-| cookies_str | str  | 是  | Bilibili 登录 Cookie 字符串（格式见下方说明）        |
-
-**cookies_str 格式**
-
-从浏览器开发者工具中复制 Bilibili 请求头中的 Cookie 字段值，格式为：
+将获取到的 Cookie 字符串作为 `cookies_str` 参数传入接口，格式如下：
 
 ```
 SESSDATA=xxx; bili_jct=xxx; DedeUserID=xxx; ...
 ```
+
+## 📡 接口说明
+
+### POST `/search_some_by_num`
+
+按数量批量搜索 B站 视频。
+
+**请求参数**
+
+| 字段          | 类型  | 必填 | 说明                                  |
+|-------------|-----|----|-------------------------------------|
+| keyword     | str | 是  | 搜索关键词                               |
+| num         | int | 是  | 期望返回的视频数量                           |
+| order       | str | 是  | 排序方式：`dm`（弹幕数）/ `click`（播放量）       |
+| cookies_str | str | 是  | B站登录 Cookie 字符串                     |
 
 **请求示例**
 
@@ -80,39 +108,20 @@ curl -X POST http://localhost:5008/search_some_by_num \
       "title": "视频标题",
       "author": "UP主名称",
       "play": 100000,
-      "video_review": 5000,
-      ...
+      "video_review": 5000
     }
   ]
 }
 ```
 
-**响应字段**
+## 🍥 日志
 
-| 字段      | 说明              |
-|---------|-----------------|
-| code    | 200 成功，400 失败   |
-| message | 结果描述            |
-| data    | 视频列表，失败时为 null |
+| 日期       | 说明                            |
+|----------|---------------------------------|
+| 26/04/10 | 项目初始化，完成视频搜索 API 封装            |
 
-## 项目结构
+## 🧸 额外说明
 
-```
-.
-├── App.py              # FastAPI 应用入口
-├── apis/
-│   └── bili_apis.py    # Bilibili API 封装
-├── utils/
-│   └── bili_utils.py   # 工具函数（签名、请求头、Cookie 解析）
-├── static/
-│   └── bili.js         # WBI 签名所需 JS 代码
-├── requirements.txt
-├── Dockerfile
-└── .dockerignore
-```
-
-## 注意事项
-
-- 需要有效的 Bilibili 登录 Cookie，Cookie 过期后需重新获取
-- 搜索结果依赖 Bilibili 接口，受其频率限制和反爬策略影响
-- 仅供学习和研究使用，请遵守 Bilibili 用户协议
+1. 感谢 star⭐ 和 follow📰！不时更新
+2. 有问题欢迎通过 Issue 反馈
+3. 仅供学习和技术研究，请遵守 [B站用户服务协议](https://www.bilibili.com/blackboard/agreement.html)
