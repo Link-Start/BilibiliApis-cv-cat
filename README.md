@@ -120,8 +120,37 @@ curl -X POST http://localhost:5008/search_some_by_num \
 |----------|---------------------------------|
 | 26/04/10 | 项目初始化，完成视频搜索 API 封装            |
 
-## 🧸 额外说明
 
-1. 感谢 star⭐ 和 follow📰！不时更新
-2. 有问题欢迎通过 Issue 反馈
-3. 仅供学习和技术研究，请遵守 [B站用户服务协议](https://www.bilibili.com/blackboard/agreement.html)
+## 🤝 欢迎贡献 PR
+
+本项目欢迎任何形式的贡献！如果你有新功能想法、Bug 修复或文档改进，欢迎提交 PR。
+
+- Fork 本仓库并在新分支上开发
+- 保持代码风格与现有代码一致
+- PR 描述中请简要说明改动内容和目的
+- 也欢迎通过 [Issue](https://github.com/cv-cat/BilibiliApis/issues) 提出建议或报告问题
+
+## 🧸额外说明
+1. 感谢star⭐和follow📰！不时更新
+2. 作者的联系方式在主页里，有问题可以随时联系我
+3. 可以关注下作者的其他项目，欢迎 PR 和 issue
+4. 感谢赞助！如果此项目对您有帮助，请作者喝一杯奶茶~~ （开心一整天😊😊）
+5. thank you~~~
+
+
+## 📈 Star 趋势
+<a href="https://www.star-history.com/#cv-cat/BilibiliApis&Date">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=cv-cat/BilibiliApis&type=Date&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=cv-cat/BilibiliApis&type=Date" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=cv-cat/BilibiliApis&type=Date" />
+ </picture>
+</a>
+
+
+## 🍔 交流群
+如果你对爬虫和ai agent感兴趣，请加作者主页wx通过邀请加入群聊
+
+ps: 群123已超过wx限制人数500，请加群4
+
+![06f69d67ff814b84e122bb32d123075b](https://github.com/cv-cat/Spider_XHS/blob/master/author/group4_2026_04_08)
