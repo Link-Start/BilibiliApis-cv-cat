@@ -139,12 +139,13 @@ curl -X POST http://localhost:5008/search_some_by_num \
 
 
 ## 📈 Star 趋势
-<a href="https://www.star-history.com/#cv-cat/BilibiliApis&Date">
- <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=cv-cat/BilibiliApis&type=Date&theme=dark" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=cv-cat/BilibiliApis&type=Date" />
-   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=cv-cat/BilibiliApis&type=Date" />
- </picture>
+
+<a href="https://cvcat.site/star-history/svg?repos=cv-cat/BilibiliApis&type=Date">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://cvcat.site/star-history/svg?repos=cv-cat/BilibiliApis&type=Date&theme=dark" />
+    <source media="(prefers-color-scheme: light)" srcset="https://cvcat.site/star-history/svg?repos=cv-cat/BilibiliApis&type=Date" />
+    <img alt="Star History Chart" src="https://cvcat.site/star-history/svg?repos=cv-cat/BilibiliApis&type=Date" />
+  </picture>
 </a>
 
 
@@ -152,8 +153,8 @@ curl -X POST http://localhost:5008/search_some_by_num \
 
 如果你对爬虫和 AI Agent 感兴趣，请加作者主页 wx 通过邀请加入群聊
 
-ps: 请加群4、17、18，人满或者过期 issue | wx 提醒
+ps: 请加群，人满或者过期 issue | wx 提醒
 
-| group14 | group17 | group18 |
+| group-1 | group-2 | group-3 |
 |:--:|:--:|:--:|
-| <img width="280" alt="group14" src="https://github.com/user-attachments/assets/4ff4e202-7fc2-42f7-910a-e12d55456bd1" /> | <img width="280" alt="group17" src="https://github.com/user-attachments/assets/6406398d-a4c7-4b08-a92c-496ea10a4440" /> | <img width="280" alt="group18" src="https://github.com/user-attachments/assets/57f6a18c-d9d0-4343-b2eb-c32e1e991115" /> |
+| <img width="280" alt="group1" src="https://cvcat.site/assets/group1.jpg" /> | <img width="280" alt="group2" src="https://cvcat.site/assets/group2.jpg" /> | <img width="280" alt="group3" src="https://cvcat.site/assets/group3.jpg" /> |
