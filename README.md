@@ -300,8 +300,8 @@ BilibiliApis/
 
 如果你对爬虫和 AI Agent 感兴趣，可以加入群聊一起交流。
 
-如二维码过期，请通过 Issue 提醒更新。
+如群满或二维码过期，请通过 Issue、微信或 QQ 提醒更新。
 
-| group-1 | group-2 | group-3 |
-|:--:|:--:|:--:|
-| <img width="280" alt="group1" src="https://cvcat.site/assets/group1.jpg"> | <img width="280" alt="group2" src="https://cvcat.site/assets/group2.jpg"> | <img width="280" alt="group3" src="https://cvcat.site/assets/group3.jpg"> |
+| group-1 | group-2 | group-3 | group-4 (2000人qq群) |
+|:--:|:--:|:--:|:--:|
+| <img width="280" alt="group1" src="https://cvcat.site/assets/group1.jpg"> | <img width="280" alt="group2" src="https://cvcat.site/assets/group2.jpg"> | <img width="280" alt="group3" src="https://cvcat.site/assets/group3.jpg"> | <img width="280" alt="group4" src="https://cvcat.site/assets/group4.jpg"> |
